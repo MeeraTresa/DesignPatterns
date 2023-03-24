@@ -1,0 +1,22 @@
+Object behavioral
+Encapsulate a request as an object, thereby letting you paramterize clients with different requests, queue or log requests
+and support undoable operations
+
+Also known as transaction, action
+
+Encapsulating invocation
+
+The command pattern allows you to decouple the requester of an action from the object that actually performs the action
+
+Participants
+1. Command
+   - Declares an interface for executing an operation
+2. ConcreteCommand
+    - defines a binding between a Receiver object and an action
+    - implements Execute by invoking the corresponding operations on the Receiver
+3. Client
+    - Creates a Concrete Command object and sets its receiver
+4. Invoker
+    - Asks the command to carry out the request
+5. Receiver
+    - Knows how to perform the operations associated with carrying out a request. Any class may serve as a receiver

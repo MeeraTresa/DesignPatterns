@@ -1,0 +1,20 @@
+Provides a surrogate or placeholder for another object to control access to it
+Surrogate
+One reason for controlling accrss to an object is to defer the full cost of its creation and initialization until we actually
+need to use it.
+
+Participants
+Subject(Graphic)
+- defines the common interface for RealSubject and Proxy so that a Proxy can be used anywhere a RealSubject is expected.
+RealSubject(Image)
+- defines the real object that proxy represents
+Proxy(ImageProxy)
+- maintains a reference that lets proxy access the real subject. Proxy may refer to a SUbject if the RealSubject and Subject interface
+are the same.
+- provides and interface identical to the Subject so that a proxy can be substituted for the real subject
+- controls access to the Real Subject and may be responsible for creating and deleting it
+- Other responsibilities depend on the kind of proxy
+    a. Remote proxies are responsible for encoding a request and its arguments and for sending the encoded request to the real subject in a
+    different address space
+    b. Virtual proxies may cache additional information about the real subject so that they can postpone accessing it. Eg: ImageProxy
+    c. Protection proxies check that the caller has access permisssions required to perform a request

@@ -1,0 +1,76 @@
+A methodical approach to learning basic object design
+It is possible to communicate the detailed principles and reasoning to required to grasp basic object design and to learn to
+apply these in a methodical approach that removes the magic and vagueness.
+
+This approach to understanding and using design principles  is based on
+    'Patterns of assigning responsibilities'
+
+The UML defines a responsibility  as "a contract or obligation of a classifier".
+Responsibilities are related to the obligations of an object in terms of its behavior.
+Basically, these responsibilities are of the following two types:
+knowing
+doing
+
+Doing responsibilities of an object include:
+o doing something itself, such as creating an object or
+doing a calculation
+o initiating action in other objects
+o controlling and coordinating activities in other objects
+Knowing responsibilities of an object include:
+o knowing about private encapsulated data
+o knowing about related objects
+o knowing about things it can derive or calculate
+
+
+A responsibility is not the same thing as a method, but methods are implemented to fulfill responsibilities.
+Responsibilities are implemented using methods that either act alone or collaborate with other methods and objects.
+
+
+Patterns
+Experienced object-oriented developers (and other software developers) build up a repertoire of both general
+principles and idiomatic solutions that guide them in the creation of software.
+These principles and idioms, if codified in a structured format describing the problem and solution,
+and given a name, may be called patterns. For example, here is a sample pattern:
+
+Pattern Name:
+Solution:
+Problem It Solves:
+Information Expert
+Assign a responsibility to the class that has the
+information needed to fulfill it.
+What is a basic principle by which to assign
+responsibilities to objects?
+
+Most simply, a pattern is a named problem/solution pair that can be applied
+in new context, with advice on how to apply it in novel situations and
+discussion of its trade-offs.
+
+GRASP: Patterns of General Principles in Assigning Responsibilities
+The name was chosen to suggest the importance of grasp ing these principles to successfully design object-oriented software.
+
+1. Information Expert
+2. Creator
+3. High Cohesion
+4. Low Coupling
+5. Controller
+
+
+6. Polymorphism
+7. Pure Fabrication
+8. Indirection
+9. Protected Variations
+
+
+Information Expert
+A general principle of object design and responsibility assignment
+Assign a responsibility to the information expert - the class that has the information to fulfil the responsibility.
+
+Solution - Assign a responsibility to the information expert, the class that has the information
+necessary to fulfill the responsibility.
+Problem  - What is a general principle of assigning responsibilities to objects?
+A Design Model may define hundreds or thousands of software classes, and an
+application may require hundreds or thousands of responsibilities to be fulfilled.
+During object design, when the interactions between objects are defined, we
+make choices about the assignment of responsibilities to software classes. Done
+well, systems tend to be easier to understand, maintain, and extend, and there is
+more opportunity to reuse components in future applications.

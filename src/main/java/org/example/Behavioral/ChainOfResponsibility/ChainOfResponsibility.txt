@@ -1,0 +1,29 @@
+Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request
+Chain the receiving objects and pass the request along the chain until an object handles it.
+The firs6 object in the chain receives the request and either handles it or forward it to the next candidate
+on the chain which does it likewise.
+The object that made the request has no explicit knowledge of who will handle it. We say the request has an implicit receiver.
+To forward the request along the chain and to ensure receivers remain implicit, each object on the chain shares a common interface
+for handling requests and for accessing its successor on the chain.
+
+Use Chain of Responsibility when
+More than one object may handle a request and the handler is not known apriori. The handler should be ascertained automatically.
+You want to issue a request to one of several objects without specifying the receiver explicitly.
+The set of objects that can handle a request should be specified dynamically.
+
+Participants
+
+Handler(HelpHandler)
+    - defines an interface for handling requests
+    - (optional) implements the successor link
+ConcreteHandler(PrintButton, PrintDialog)
+    - handles requests it is responsible for.
+    - can access its successor
+    - if the ConcreteHandler can handle the request, it does so, otherwise it forwards the request to its successor
+Client
+    - initiates the request to a ConcreteHandler object on the chain
+
+Consequences
+Reduced coupling
+Added flexibility in assigning responsibilities to objects
+Receipt isn't guaranteed
