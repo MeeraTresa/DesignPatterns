@@ -1,0 +1,23 @@
+Class Creational
+Define an interface for creating an object.
+But let subclasses decide which class to instantiate.
+Factory method lets a class defer instantiation to subclasses
+
+Virtual Constructor
+
+Motivation
+Frameworks use abstract classes to define and maintain relationships between objects.
+A framework is often responsible for creating these objects as well.
+
+Applicability
+A class can't anticipate the class of the objects it must create
+A class wants subclasses to specify the objects it creates
+Classes delegate responsibility to one of the several helper subclass and you want to localize the knowledge of which helper
+subclass is the delegate
+
+Product
+ConcreteProduct
+Creator
+ConcreteCreator
+
+Creator relies on the subclass to define the factory method so that it returns an instance of the  appropriate concrete product

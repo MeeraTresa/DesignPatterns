@@ -1,0 +1,16 @@
+Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation
+Cursor
+
+An aggregate object such as a list should give you a way to access its elements without exposing its internal structure.
+
+Participants
+Iterator
+    Defines an interface for accessing and traversing elements
+ConcreteIterator
+    implements the Iterator interface
+    keeps track of the current position in the traversal of the aggregate
+Aggregate
+    Defines an interface for creating an Iterator object
+ConcreteAggregate
+    Implements the Iterator creation interface to return an instance of the proper ConcreteIterator
+
